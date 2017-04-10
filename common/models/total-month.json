@@ -1,0 +1,35 @@
+{
+  "name": "total_month",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_location": {
+      "type": "number"
+    },
+    "ac": {
+      "type": "number"
+    },
+    "chiller": {
+      "type": "number"
+    },
+    "last_update": {
+      "type": "string"
+    },
+    "total": {
+      "type": "number"
+    },
+    "month": {
+      "type": "number"
+    },
+    "year": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

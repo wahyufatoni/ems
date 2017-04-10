@@ -1,0 +1,38 @@
+{
+  "name": "alarm",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_item": {
+      "type": "number"
+    },
+    "type": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string"
+    },
+    "end_date": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "id_location": {
+      "type": "number"
+    },
+    "count": {
+      "type": "number"
+    },
+    "saverity": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

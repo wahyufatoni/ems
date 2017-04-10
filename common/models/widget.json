@@ -1,0 +1,23 @@
+{
+  "name": "widget",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_location": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "last_update": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

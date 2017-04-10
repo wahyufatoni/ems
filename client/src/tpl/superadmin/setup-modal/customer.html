@@ -1,0 +1,120 @@
+<form class="form-horizontal form-validation" name="$parent.formCustomer">
+<div class="modal fade" id="modalCustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">FORM CUSTOMER</h4>
+    </div>
+    <div class="modal-body">
+    <div ng-show="$parent.action=='update'||$parent.action=='insert'">
+        <form name="form" class="form-validation">
+            <div class="form-group">
+                <label class="col-sm-3">Customer Name</label>
+                <div class="col-sm-4" ui-module="select2">
+                    <select ui-select2 class="form-control" ng-model="$parent.post.customer_name">
+                        <option value="Alfamart">Alfamart</option>
+                        <option value="Indomaret">Indomaret</option>
+                        <option value="Seven Eleven">Seven Eleven</option>
+                        <option value="Pharmalab">Pharmalab</option>
+                        <option value="Demo Customer">Demo Customer</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3">Customer Type</label>
+                <div class="col-sm-4" ui-module="select2">
+                    <select ui-select2 class="form-control" ng-model="$parent.post.customer_type">
+                        <option value="Small Retail Store">Small Retail Store</option>
+                        <option value="Retail Store">Retail Store</option>
+                        <option value="Pharmacy Warehouse">Pharmacy Warehouse</option>
+                        <option value="Food Storage">Food Storage</option>
+                        <option value="Building">Building</option>
+                        <option value="Equipment Owner">Equipment Owner</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3">Customer ID</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="$parent.post.customer_id" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3" >Billing Type</label>
+                <div class="col-sm-4" ui-module="select2">
+                    <select ui-select2 class="form-control" ng-model="$parent.post.billing_type">
+                        <option value="Monthly">Monthly</option>
+                        <option value="Yearly">Yearly</option>
+                        <option value="One Trial Customer">One Trial Customer</option>
+                        <option value="One Time Buy">One Time Buy</option>
+                     </select>
+                 </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3">Customer PIC</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="$parent.post.customer_pic" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3">Contact Info &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em class="text-muted">Phone#</em></label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="$parent.post.phone" required>
+                </div>
+                <label class="col-sm-1">Email</label>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" ng-model="$parent.post.email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3">Customer Admin User Name</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="$parent.post.username" required>
+                </div>
+                <label class="col-sm-1">Password</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" ng-model="$parent.post.password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3">Join Date</label>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input class="form-control input-sm" id="date" name="date" placeholder="{{date}}" type="text" ng-model="$parent.post.join_date" />
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox">
+                <label class="i-checks">
+                    <input type="checkbox" ng-model="agree" required><i></i> Semua input sudah benar
+                </label>
+            </div>
+        </form>
+    </div>
+    </div>
+    <div class="modal-footer">
+         <button type="button" class="btn btn-primary" data-dismiss="modal" 
+          ng-click="save()" ng-disabled="$parent.formCustomer.$invalid">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</div>
+</div>
+</div>
+</form>
+
+<script>
+      $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+          format: 'yyyy-mm-dd',
+          container: container,
+          todayHighlight: true,
+          autoclose: true,
+        })
+      })
+</script> 

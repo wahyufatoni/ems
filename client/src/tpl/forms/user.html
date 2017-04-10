@@ -1,0 +1,102 @@
+<form class="form-horizontal form-validation" name="$parent.formUser">
+<div class="modal fade" id="modalUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">FORM USER</h4>
+      </div>
+      <div class="modal-body">
+          
+          <div ng-show="$parent.action=='update'||$parent.action=='insert'">
+
+            <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align:left;">Zone</label>
+            <div class="col-sm-9">
+                <select class="form-control" ng-model="$parent.post.id_zone" 
+                  ng-change="setZone($parent.post.id_zone)" required>
+                    <option ng-repeat="a in zone" value="{{a.id}}">{{a.zone}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align:left;">Location</label>
+            <div class="col-sm-9">
+                <select class="form-control" ng-model="$parent.post.id_location"
+                  ng-change="setLocation($parent.post.id_location)" required>
+                    <option ng-repeat="a in selectLocation" value="{{a.id}}">{{a.location_name}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align:left;">First Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" ng-model="$parent.post.firstname" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align:left;">Last Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" ng-model="$parent.post.lastname" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align:left;">Username</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" ng-model="$parent.post.username" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align:left;">Phone</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" ng-model="$parent.post.phone" required>
+            </div>
+          </div>
+
+           <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align:left;">Password</label>
+            <div class="col-sm-9">
+               <input type="password" class="form-control" ng-model="$parent.post.password" required>
+            </div>
+          </div>
+
+           <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align:left;">Confirm Password</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" required ng-model="confirm_password"
+               ui-validate=" '$value==$parent.post.password' " ui-validate-watch="'$parent.post.password'">
+            </div>
+          </div>
+
+          </div>
+
+          <div ng-show="$parent.action=='delete'">
+              <h4>Are you sure to delete ?</h4>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-primary" data-dismiss="modal" 
+          ng-click="save()" ng-disabled="$parent.formUser.$invalid">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+
+<!-- {
+        firstName: 'Project',
+        lastName: 'Manager',
+        phone: '08123123123',
+        role: 'pm',
+        username: 'pm',
+        email: 'pm@csdnhijab.com',
+        password: 'csdnhijab'
+    } -->

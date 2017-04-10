@@ -1,0 +1,53 @@
+{
+  "name": "panel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_master": {
+      "type": "number"
+    },
+    "channel": {
+      "type": "number"
+    },
+    "label": {
+      "type": "string"
+    },
+    "phasa": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "max": {
+      "type": "number"
+    },
+    "min": {
+      "type": "number"
+    },
+    "last_value": {
+      "type": "number"
+    },
+    "last_update": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "masterPanel": {
+      "type": "belongsTo",
+      "model": "master_panel",
+      "foreignKey": "id_master"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

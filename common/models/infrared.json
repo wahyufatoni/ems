@@ -1,0 +1,41 @@
+{
+  "name": "infrared",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ir_name": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "set_default": {
+      "type": "number"
+    },
+    "id_location": {
+      "type": "number"
+    },
+    "part_number": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "install_date": {
+      "type": "date"
+    },
+    "max_difference": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

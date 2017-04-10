@@ -1,0 +1,36 @@
+{
+  "name": "last_wh",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Gateway_id": {
+      "type": "number"
+    },
+    "Rwh": {
+      "type": "number"
+    },
+    "Swh": {
+      "type": "number"
+    },
+    "Twh": {
+      "type": "number"
+    },
+    "Channel": {
+      "type": "number"
+    },
+    "Kwh_id": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

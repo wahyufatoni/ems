@@ -1,0 +1,44 @@
+{
+  "name": "WattHour",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Kwh_id": {
+      "type": "number"
+    },
+    "Gateway_id": {
+      "type": "number"
+    },
+    "Rwh": {
+      "type": "number"
+    },
+    "Swh": {
+      "type": "number"
+    },
+    "Twh": {
+      "type": "number"
+    },
+    "Rvarh": {
+      "type": "number"
+    },
+    "Svarh": {
+      "type": "number"
+    },
+    "Tvarh": {
+      "type": "number"
+    },
+    "Channel": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

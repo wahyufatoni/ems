@@ -1,0 +1,276 @@
+<!-- icon building -->
+  <div ng-repeat="building in $parent.buildings">
+    <!-- ATM -->
+    <div ng-if="building.styles=='atm'" >
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="ATM">
+          <div class="txtatm"><p>ATM</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- door 1 left -->
+    <div ng-if="building.styles=='door-left'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="door1-left">
+        </div>
+      </div>
+    </div>
+
+    <!-- door 1 top -->
+    <div ng-if="building.styles=='door-top'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="door1-top">
+        </div>
+      </div>
+    </div>
+
+    <!-- door 1 right -->
+    <div ng-if="building.styles=='door-right'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="door1-right">
+        </div>
+      </div>
+    </div>
+
+    <!-- door 1 bottom -->
+    <div ng-if="building.styles=='door-bottom'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="door1-bottom">
+        </div>
+      </div>
+    </div>
+
+    <!--door 2 left-->
+    <div ng-if="building.styles=='door2-left'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="door-left">
+          <div class="door-left1"></div>
+        </div>
+      </div>
+    </div>
+
+     <!--door 2 top-->
+    <div ng-if="building.styles=='door2-top'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="door-top">
+          <div class="door-top1"></div>
+        </div>
+      </div>
+    </div>
+
+     <!--door 2 right-->
+    <div ng-if="building.styles=='door2-right'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="door-right">
+          <div class="door-right1"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--door 2 bottom-->
+    <div ng-if="building.styles=='door2-bottom'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="door-bottom">
+          <div class="door-bottom1"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--Kasir-->
+    <div ng-if="building.styles=='kasir'">
+      <div class="col-md-1" data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="kasir">
+            <div class="screen"></div>
+            <div class="foot">
+              <div class="txtkasir1"><p>Kasir</p></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Rack 5x1-->
+    <div ng-if="building.styles=='rack-5x1'">
+      <div data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="rack5x1">
+          <div class="text">RACK</div>
+        </div>
+      </div>
+    </div>
+
+    <!--Rack 5x2-->
+    <div ng-if="building.styles=='rack-5x2'">
+      <div data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="rack5x2">
+          <div class="text">RACK</div>
+        </div>
+      </div>
+    </div>
+
+    <!--Rack 2x2-->
+    <div ng-if="building.styles=='rack-2x1'">
+      <div data-drag="true" ng-dblclick="delete(building.id)" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(building, $index)'}" ng-style="{top:building.position_top,left:building.position_left}">
+        <div class="rack2x2">
+          <div class="text">RACK</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- icon TH -->
+  <div ng-repeat="temperature in $parent.temperatures">
+      <div ng-if="temperature.humidity==1">
+          <div class="humidity" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+            jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(temperature, $index)'}"
+            ng-style="{'top':temperature.position_top , 'left':temperature.position_left, 'position':'absolute','z-index':999}" popover-trigger="mouseenter" popover="Last Connect : {{temperature.last_update}}" popover-title="ID Sensor {{temperature.id}}">
+
+          <div easypiechart percent="temperature.ratio" options="th[1]" >
+          </div>
+          <div class="text" ng-click="items('temperature')">
+              <p style="margin-top:0px;margin-bottom:0px;">{{temperature.last_value}}&deg;</p><br>
+              <p style="margin-top:-25px;margin-bottom:0px;">{{temperature.last_humidity}}&nbsp;%</p>
+          </div>
+          <p style="text-align:center;padding-top:6px;">{{temperature.temp_name}}</p>
+          </div>
+      </div>
+  </div>
+
+<!-- Icon Ac -->
+    <div ng-repeat= "ac in $parent.acs" >
+      <div ng-show="ac.styles=='ac-top'">
+          <div class="{{ac.classes}}" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+          jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(ac, $index)'}"
+          ng-style="{'top':ac.position_top , 'left':ac.position_left, 'position':'absolute','z-index':999}" >
+              <div class="text" style="margin-left: -8px;" ng-click="items('ac')">
+                  <strong>
+                      <div class="fraction">
+                          <span class="fup">{{ac.temp}}</span>
+                          <span class="bar">/</span>
+                          <span class="fdn">{{ac.infra}}</span>
+                      </div>
+                  </strong>
+              </div>
+              <p style="text-align: center;margin-left: -12px;margin-bottom: 0px;"><b>{{ac.ac_name}}</b></p>
+         </div>
+      </div>
+
+      <div ng-show="ac.styles=='ac-bottom'">
+          <div class="{{ac.classes}}" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+          jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(ac, $index)'}"
+          ng-style="{'top':ac.position_top , 'left':ac.position_left, 'position':'absolute','z-index':999}">
+              <div class="text" style="margin-left: -8px;" ng-click="items('ac')">
+                  <strong>
+                      <div class="fraction">
+                          <span class="fup">{{ac.temp}}</span>
+                          <span class="bar">/</span>
+                          <span class="fdn">{{ac.infra}}</span>
+                      </div>
+                  </strong>
+              </div>
+              <p style="text-align: center; margin-left: -11px; margin-top: -60px;margin-bottom: 0px;"><b>{{ac.ac_name}}</b></p>
+         </div>
+      </div>
+
+      <div ng-show="ac.styles=='ac-left'">
+          <div class="{{ac.classes}}" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+          jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(ac, $index)'}"
+          ng-style="{'top':ac.position_top , 'left':ac.position_left, 'position':'absolute','z-index':999}" >
+              <div class="text" style="margin-left: 22px;" ng-click="items('ac')">
+                  <strong>
+                      <div class="fraction">
+                          <span class="fup">{{ac.temp}}</span>
+                          <span class="bar">/</span>
+                          <span class="fdn">{{ac.infra}}</span>
+                      </div>
+                  </strong>
+              </div>
+              <p style="text-align: center; margin-left: 48px; margin-top: -33px;margin-bottom: 0px;"><b>{{ac.ac_name}}</b></p>
+         </div>
+      </div>
+
+      <div ng-show="ac.styles=='ac-right'">
+          <div class="{{ac.classes}}" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+          jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(ac, $index)'}"
+          ng-style="{'top':ac.position_top , 'left':ac.position_left, 'position':'absolute','z-index':999}">
+              <div class="text" style="margin-left: -38px" ng-click="items('ac')">
+                  <strong>
+                      <div class="fraction" >
+                          <span class="fup">{{ac.temp}}</span>
+                          <span class="bar">/</span>
+                          <span class="fdn">{{ac.infra}}</span>
+                      </div>
+                  </strong>
+              </div>
+              <p style="text-align: center; margin-left: -120px; margin-top: -33px;margin-bottom: 0px;"><b>{{ac.ac_name}}</b></p>
+         </div>
+      </div>
+    </div>
+<!-- Icon Pump -->
+      <div ng-repeat="pump in $parent.pumps">
+        <div ng-show="pump.styles=='pump'">
+          <div  class="col-md-1" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+           jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(pump, $index)'}"
+           ng-style="{'top':pump.position_top , 'left':pump.position_left, 'position':'absolute','z-index':999}">
+              <div ng-click="items('pump')">
+                <div ng-class="{'circlepump-off':pump.status == 0, 'circlepump-info':pump.status == 1, 'circlepump-danger':pump.status == 404}"></div>
+                <div ng-class="{'roundpump-off':pump.status == 0, 'roundpump-info':pump.status == 1, 'roundpump-danger':pump.status == 404}"></div>
+                <div ng-class="{'boxpump-off':pump.status == 0, 'boxpump-info':pump.status == 1, 'boxpump-danger':pump.status == 404}"></div>
+                <div ng-class="{'bottompump-off':pump.status == 0, 'bottompump-info':pump.status == 1, 'bottompump-danger':pump.status == 404}"></div>
+              </div>
+              <p class="text-xs" style="margin-top: 5px;margin-left: 5px;">{{pump.pump_name}}</p>
+              {{myHeader}}
+          </div>
+        </div>
+    </div>
+
+<!-- incon alarm Door -->
+    <div ng-repeat="door in $parent.door">
+      <div  ng-click="items('door')">
+
+        <div ng-if="door.styles=='door2_bottom'">
+         <div class="col-md-1" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+            jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(door, $index)'}"
+            ng-style="{'top':door.position_top , 'left':door.position_left, 'position':'absolute','z-index':999}">
+            <div ng-class="{ 'door-bottom':door.status== 0, 'door-bottom-open':door.status== 1, 'door-bottom-danger':door.status== 404}">
+              <div ng-class ="{'door-bottom1':door.status == 0, 'door-bottom1-open':door.status == 1, 'door-bottom1-danger':door.status == 404}">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="door.styles=='door2_left'">
+         <div class="col-md-1" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+            jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(door, $index)'}"
+            ng-style="{'top':door.position_top , 'left':door.position_left, 'position':'absolute','z-index':999}" >
+            <div ng-class="{ 'door-left':door.status== 0, 'door-left-open':door.status== 1, 'door-left-danger':door.status== 404}">
+              <div ng-class ="{'door-left1':door.status == 0, 'door-left1-open':door.status == 1, 'door-left1-danger':door.status == 404}">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="door.styles=='door2_top'">
+         <div class="col-md-1" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+            jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(door, $index)'}"
+            ng-style="{'top':door.position_top , 'left':door.position_left, 'position':'absolute','z-index':999}">
+            <div ng-class="{ 'door-top':door.status== 0, 'door-top-open':door.status== 1, 'door-top-danger':door.status== 404}">
+              <div ng-class ="{'door-top1':door.status == 0, 'door-top1-open':door.status == 1, 'door-top1-danger':door.status == 404}">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="door.styles=='door2_right'">
+         <div class="col-md-1" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+            jqyoui-draggable="{index: {{$index}},animate:true,onStart:'startCallback(door, $index)'}"
+            ng-style="{'top':door.position_top , 'left':door.position_left, 'position':'absolute','z-index':999}">
+            <div ng-class="{ 'door-right':door.status== 0, 'door-right-open':door.status== 1, 'door-right-danger':door.status== 404}">
+              <div ng-class ="{'door-right1':door.status == 0, 'door-right1-open':door.status == 1, 'door-right1-danger':door.status == 404}">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>

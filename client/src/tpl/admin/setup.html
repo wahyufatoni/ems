@@ -1,0 +1,97 @@
+ <div data-ng-include=" 'tpl/blocks/header_setup.html' " class="app-header navbar">
+  </div>
+
+
+<div ng-include="'tpl/forms/forms_setup.html'"></div>
+<!-- hbox layout -->
+<div class="hbox hbox-auto-xs bg-light " ng-init="
+  app.settings.asideFolded = true;
+  app.settings.asideDock = false;
+  app.settings.container = false;
+  app.hideAside = true" 
+  >
+  <!-- column -->
+  <div class="col item">
+
+
+<div class="bg-light lter b-b wrapper-md">
+    <ul class="nav nav-pills nav-sm" style="margin: -10px;">
+      <li ng-repeat="a in navs" class="{{a.style}}" ng-click="setActive(a.model)">
+          <a>{{a.label}}</a>
+      </li>
+      <li class="pull-right">
+        <a ui-sref="access.ceo" style="padding-bottom: 8px; padding-top: 8px;">
+          <button class="btn btn-info btn-addon btn-sm"><i class="fa fa-location-arrow"></i>Go To Maps</button>
+        </a>
+      </li>
+    </ul>
+</div>
+
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      TABLE&nbsp;&nbsp;{{canvas.name}} 
+    </div>
+    <div class="panel-body b-b b-light">
+      Search :&nbsp;&nbsp;<input type="text" class="form-control input-sm w-md inline m-r"
+       ng-model="search"/>
+      <button class="btn m-b-xs btn-sm btn-primary btn-addon" ng-click="create(canvas.title)"
+       data-toggle="modal" data-target="#myModal">
+          <i class="fa fa-plus"></i>Insert
+      </button>
+    </div>
+    <div>
+      <table class="table" style="margin-bottom: -20px;">
+        <thead>
+          <tr>
+              <th ng-repeat="b in canvas.properties" ng-if="b.disabled==undefined && b.dontShow==undefined">
+               {{b.label}} </th>
+              <th style="width:90px">
+                  Action
+              </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="a in canvas.data | filter : search" style="background-color: #fff;">
+              <td ng-repeat="b in canvas.properties" ng-if="b.disabled==undefined && b.dontShow==undefined"> 
+                  <div ng-if="b.relation==undefined && b.filter==undefined">
+                       <p ng-if="canvas.title!='location'">{{ a[b.model] }}</p>
+                       <a ng-if="canvas.title=='location'" ng-click="setBuilding(a)">
+                          {{ a[b.model] }}
+                       </a>
+                  </div>
+                  <div ng-if="b.relation==undefined && b.filter!=undefined">
+                       {{ filter(b.filter,a[b.model]) }}
+                  </div>
+                  <div ng-if="b.relation==true">
+                    {{ a[b.parent_label] }}
+                  </div>
+              </td>
+              <td>
+                  <button class="btn btn-default btn-xs" ng-click="update(canvas.title,a,$index)"
+                  data-toggle="modal" data-target="#myModal">
+                      <i class="fa fa-pencil"></i>
+                  </button>
+                  <button class="btn btn-default btn-xs" ng-click="delete(canvas.title,a,$index)"
+                  data-toggle="modal" data-target="#myModal">
+                      <i class="fa fa-trash-o"></i>
+                  </button>
+              </td>
+          </tr>
+        </tbody>
+        <tfoot class="hide-if-no-paging">
+          <tr>
+              <td colspan="5" class="text-center">
+                  <ul class="pagination"></ul>
+              </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- //end column -->
+  </div>
+</div>
+ 

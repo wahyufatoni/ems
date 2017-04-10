@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+  <meta charset="utf-8"/>
+  <title>ALFA MONITORING</title>
+  <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="js/jquery/ngPrint/ngPrint.css" />
+  <link rel="stylesheet" href="css/toaster.css">
+  <link rel="stylesheet" href="css/clockpicker.css">
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/custom.css" type="text/css" />
+
+  <link rel="stylesheet" href="js/jquery/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" type="text/css"/>
+  <link rel="stylesheet" href="js/jquery/rangepicker/bootstrap-daterangepicker/daterangepicker.css"/>
+
+</head>
+<body>
+  <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+
+  <toaster-container toaster-options="{
+  'closeButton': false,
+  'debug': false,
+  'position-class': 'toast-top-right',
+  'onclick': null,
+  'showDuration': '200',
+  'hideDuration': '3000',
+  'timeOut': '5000',
+  'extendedTimeOut': '1000',
+  'showEasing': 'swing',
+  'hideEasing': 'linear',
+  'showMethod': 'fadeIn',
+  'hideMethod': 'fadeOut'
+  }"></toaster-container>
+
+
+
+  <!-- jQuery -->
+  <script src="js/jquery/jquery.min.js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD5DTq_C3F4HLDcRYbYPJKkVY4_Z16Xm5Y" async="" defer="defer" type="text/javascript"></script>
+  <script src="js/jquery/jquery-ui/ui/jquery-ui.js"></script>
+  <script src="js/jquery/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+  <script src="js/libs/bootstrap.js"></script>
+  <!-- Angular -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->
+  <script src="js/libs/angular/angular.min.js"></script>
+  <script src="js/libs/angular/angular-cookies.js"></script>
+  <script src="js/libs/angular/angular-animate.js"></script>
+  <script src="js/libs/angular/angular-ui-router.js"></script>
+  <script src="js/libs/angular/angular-resource.js"></script>
+  <script src="js/libs/angular/toaster.js"></script>
+  <script src="js/libs/angular/ngStorage.js"></script>
+  <script src="js/libs/angular/ocLazyLoad.js"></script>
+  <script src="js/libs/angular/ui-bootstrap-tpls.js"></script>
+  <script src="js/libs/moment.min.js"></script>
+  <script src="js/angular/angular-translate.js"></script>
+  <script src="js/angular/ui-jq.js"></script>
+
+
+  <script src="js/angular/ui-load.js"></script>
+  <script src="js/angular/ui-validate.js"></script>
+  <script src="js/jquery/ngPrint/ngPrint.js"></script>
+
+
+  <script src="js/jquery/highcharts/highcharts.js"></script>
+  <script src="js/jquery/highcharts/highcharts-more.js"></script>
+
+  <script src="js/jquery/rangepicker/moment/moment.js" ></script>
+  <script src="js/jquery/rangepicker/bootstrap-daterangepicker/daterangepicker.js" ></script>
+  <script src="js/jquery/rangepicker/angular-daterangepicker/js/angular-daterangepicker.js" ></script>
+  <script src="js/libs/clockpicker-gh-pages/src/clockpicker.js"></script>
+  <script src="js/jquery/angularLocalStorage/dist/angularLocalStorage.min.js"></script>
+
+  <script src="js/jquery/angular-dragdrop/src/angular-dragdrop.js"></script>
+  <script src="js/jquery/jquery.easy-pie-chart/dist/angular.easypiechart.js"></script>
+
+
+  <!-- socket -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+
+  <!-- first app -->
+  <script src="js/controller_signin.js"></script>
+  <script src="js/lb-services.js"></script>
+  <script src="js/controller_app.js"></script>
+
+  <!-- Admin -->
+  <script src="js/admin/history.js"></script>
+  <script src="js/admin/rest.js"></script>
+  <script src="js/admin/socket.js"></script>
+  <script src="js/admin/fileModel.js"></script>
+  <script src="js/admin/chart.js"></script>
+  <script src="js/admin/controller_monitoring.js"></script>
+  <script src="js/admin/controller_setup.js"></script>
+  <script src="js/admin/controller_storeinfo.js"></script>
+  <script src="js/admin/controller_alarm.js"></script>
+  <script src="js/admin/maps.js"></script>
+  <script src="js/jquery/clockpicker.js"></script>
+  <script src="js/admin/controller_mapsCeo.js"></script>
+  <!-- Super Admin -->
+  <script src="js/superadmin/ctrlSetup.js"></script>
+
+</body>
+</html>

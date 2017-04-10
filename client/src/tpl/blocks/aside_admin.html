@@ -1,0 +1,142 @@
+<div class="aside-wrap" ng-controller="controller_app">
+    <div class="navi-wrap">
+        <!-- nav -->
+        <nav ui-nav class="navi">
+        	<ul class="nav">
+		    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+		        <span>CEO</span>
+		    </li>
+
+		     <li>
+		        <a ui-sref="access.ceo">
+		            <i class="fa fa-location-arrow icon text-info"></i>
+		            <span class="font-bold">CEO</span>
+		        </a>
+		    </li>
+
+		    <li class="line dk"></li>
+
+		    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+		        <span>Navigation</span>
+		    </li>
+		    <li>
+		        <a ui-sref="admin.monitoring">
+		            <i class="icon-screen-desktop icon text-info"></i>
+		            <span class="font-bold">Dashboard</span>
+		        </a>
+		    </li>
+
+		    <li>
+		        <a ui-sref="#">
+		            <i class="fa fa-file icon text-success"></i>
+		            <span class="font-bold">Report</span>
+		        </a>
+		    </li>
+
+		    <li>
+		        <a ui-sref="#">
+		            <i class="fa fa-bell icon text-danger"></i>
+		            <span class="font-bold">Alarms</span>
+		        </a>
+		    </li>
+
+		    <li>
+		        <a ui-sref="#">
+		            <i class="fa fa-bolt icon text-info"></i>
+		            <span class="font-bold">Energy</span>
+		        </a>
+		    </li>
+
+		    <li>
+		        <a ui-sref="#">
+		            <i class="fa fa-star icon text-warning"></i>
+		            <span class="font-bold">Rating</span>
+		        </a>
+		    </li>
+
+
+		    <!-- <li>
+		        <a ui-sref="admin.setup">
+		            <i class="glyphicon glyphicon-cog icon text-primary"></i>
+		            <span class="font-bold">Setup</span>
+		        </a>
+		    </li> -->
+
+		     <!-- <li class="line dk"></li>
+		    <li>
+		    	<a>
+		    		<div class="input-group">
+		              <input type="text" class="form-control input-sm bg-light no-border rounded padder" placeholder="Search Locations..."
+		               ng-model="searchLocations" ng-change="search()">
+		              <span class="input-group-btn">
+		                <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
+		              </span>
+		            </div>
+		    	</a>
+		    </li>
+ -->
+		    <!-- <div ng-show="searchLocations==''">   -->
+			    <!-- <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+			        <span>{{a.province_name}}</span>
+			    </li>
+			    <li ng-repeat="b in a.zones">
+			    <a class="auto">
+			      <span class="pull-right text-muted">
+			        <i class="fa fa-fw fa-angle-right text"></i>
+			        <i class="fa fa-fw fa-angle-down text-active"></i>
+			      </span>
+			      <span>{{b.zone_name}}</span>
+			    </a>
+			    <ul class="nav nav-sub dker">
+			        <li ng-repeat="c in b.locations">
+			           	<a ng-click="setBuilding(c.id)">
+			                <span style="margin-left:-35px;">{{c.location_name}}</span>
+			            </a>
+			        </li>
+			    </ul>
+			    </li> -->
+
+			    <!-- <li ng-repeat="a in province"> -->
+			    <!-- <i class="glyphicon glyphicon-cog icon text-primary"></i> -->
+			    <!-- <a href class="auto">
+			        <span class="pull-right text-muted">
+			          <i class="fa fa-fw fa-angle-right text"></i>
+			          <i class="fa fa-fw fa-angle-down text-active"></i>
+			        </span>
+			        <span>{{a.province_name}}</span>
+			    </a>
+			    <ul class="nav nav-sub dk" style="margin-left:-35px;">
+			        <li ng-repeat="b in a.zones">
+			          <a href class="auto">
+			            <span class="pull-right text-muted">
+			              <i class="fa fa-fw fa-angle-right text"></i>
+			              <i class="fa fa-fw fa-angle-down text-active"></i>
+			            </span>
+			            <span>{{b.zone_name}}</span>
+			          </a>
+			              <ul class="nav dker">
+			                  <li ng-repeat="c in b.locations">
+			                    <a ng-click="setBuilding(c.id)">
+			                      <span>{{c.location_name}}</span>
+			                    </a>
+			                  </li>
+			              </ul>
+			        </li>
+			    </ul>
+			    </li>
+		    </div>
+
+		    <div ng-show="searchLocations != ''">
+		    	<li ng-repeat="a in locations | filter:{location_name:searchLocations}:false
+		    	 | orderBy:'location_name'">
+			        <a ng-click="setBuilding(a.id)">
+			            <span>{{a.location_name}}</span>
+			        </a>
+			    </li>
+		    </div> -->
+
+		</ul>
+        </nav>
+        <!-- nav -->
+    </div>
+</div>

@@ -1,0 +1,51 @@
+{
+  "name": "WattPrd_I",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Kwh_id": {
+      "type": "number"
+    },
+    "Gateway_id": {
+      "type": "number"
+    },
+    "WattPrdR": {
+      "type": "number"
+    },
+    "WattPrdS": {
+      "type": "number"
+    },
+    "WattPrdT": {
+      "type": "number"
+    },
+    "IR": {
+      "type": "number"
+    },
+    "IS": {
+      "type": "number"
+    },
+    "IT": {
+      "type": "number"
+    },
+    "Channel": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "extenalApiProcessing"
+    }
+  ],
+  "methods": {}
+}

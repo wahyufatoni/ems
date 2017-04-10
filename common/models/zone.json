@@ -1,0 +1,30 @@
+{
+  "name": "zone",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "zone_name": {
+      "type": "string"
+    },
+    "id_province": {
+      "type": "number"
+    },
+    "id_employee": {
+      "type": "number"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

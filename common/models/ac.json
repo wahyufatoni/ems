@@ -1,0 +1,72 @@
+{
+  "name": "ac",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ac_name": {
+      "type": "string"
+    },
+    "phasa": {
+      "type": "string"
+    },
+    "id_temp": {
+      "type": "number"
+    },
+    "channel": {
+      "type": "number"
+    },
+    "id_ir": {
+      "type": "number"
+    },
+    "id_kwh": {
+      "type": "number"
+    },
+    "id_location": {
+      "type": "number"
+    },
+    "last_update": {
+      "type": "string"
+    },
+    "last_value": {
+      "type": "number"
+    },
+    "part_number": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "install_date": {
+      "type": "date"
+    },
+    "start_operation": {
+      "type": "string"
+    },
+    "end_operation": {
+      "type": "string"
+    },
+    "styles": {
+      "type": "string"
+    },
+    "position_left": {
+      "type": "string"
+    },
+    "position_top": {
+      "type": "number"
+    },
+    "id_type_alarm": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

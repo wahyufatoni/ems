@@ -1,0 +1,128 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false;
+    app.settings.asideDock = false;  ">
+ <div class="col">
+<!-- main header -->
+<div class="bg-light lter b-b wrapper-md">
+  <div class="row">
+    <div class="col-sm-7 col-xs-12">
+
+      <div class="row" style="left:0;margin:-15px 0px -15px -15px;">
+          <div class="btn-group" role="group">
+            <a type="button" class="btn btn-default btn-sm" ui-sref="admin.monitoring">Dashboard</a>
+            <a type="button" class="btn btn-default btn-sm" ui-sref="admin.storeInfo">Store Inventory</a>
+            <a type="button" class="btn btn-default btn-sm active" ui-sref="admin.alarm">Alarm</a>
+
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="wrapper-md" >
+  <div class="panel panel-default" ng-show="tableType=='alarm'">
+    <div class="panel-body">
+      <table ng-if="alarms" ui-jq="dataTable" ui-options="options" class="table table-bordered table-hover m-b-none">
+        <thead>
+          <tr>
+            <th>Alarm Name</th>
+            <th>Id_item(equipment)</th>
+            <th>Severity</th>
+            <th>Count</th>
+            <th>Start</th>
+            <th>Status</th>
+            <th>Stop</th>
+            <th>SLA(hr)</th>
+            <th>Duration(hr)</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="a in alarms">
+            <td>High Temp</td>
+            <td><a ng-click="detailAlarm('detail',a.type, a.id)" class="text-info" tooltip-animation="false" tooltip="Open Detail Alarm">{{a.data}}</a></td>
+            <td>Critical</td>
+            <td>{{a.count}}</td>
+            <td>{{a.start_date | date: "dd-MMM-yyyy"}}</td>
+            <td>Open</td>
+            <td>{{a.end_date | date: "dd-MMM-yyyy"}}</td>
+            <td></td>
+            <td>{{a.totalHours}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  </div>
+
+    <div class="col-md-5" style="margin-right:10px;" >
+      <div class="row row-sm text-center">
+        <div class="col-md-4" style="padding:0px 5px 0px 10px;">
+            <div class="panel padder-v item">
+              <span class="text-muted text-xs">Critical</span>
+              <div class="font-thin h3"><strong>
+              0</strong></div>
+            </div>
+          </div>
+          <div class="col-md-4" style="padding:0px 5px 0px 5px;">
+            <div class="panel padder-v item">
+              <span class="text-muted text-xs">Major</span>
+              <div class="font-thin h3"><strong>
+              0</strong></div>
+            </div>
+          </div>
+          <div class="col-md-4" style="padding:0px 10px 0px 5px;">
+            <div class="panel padder-v item">
+              <span class="text-muted text-xs">Minor</span>
+              <div class="font-thin h3"><strong>
+              0</strong></div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <br><br><br><br>
+
+
+      <div class="wrapper-md" >
+        <div class="panel panel-default" ng-show="tableType=='detail'">
+          <div class="panel-body">
+            <table  class="table table-bordered table-hover m-b-none">
+              <thead>
+                <tr>
+                  <th>Alarm Name</th>
+                  <th>Id_item(equipment)</th>
+                  <th>Severity</th>
+                  <th>Count</th>
+                  <th>Start</th>
+                  <th>Status</th>
+                  <th>Stop</th>
+                  <th>SLA(hr)</th>
+                  <th>Duration(hr)</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr ng-repeat="a in alarms | filter:{id_item:detail.id_ite, type:detail.type}"> -->
+                <tr ng-repeat="a in alarms | filter:{'type':detail.type, 'id':detail.id}">
+                  <td></td>
+                  <td>{{a.detail.data}}</td>
+                  <td></td>
+                  <td>{{a.detail.count}}</td>
+                  <td>{{a.detail.start_date | date: "dd-MMM-yyyy"}}</td>
+                  <td></td>
+                  <td>{{a.detail.end_date | date: "dd-MMM-yyyy"}}</td>
+                  <td></td>
+                  <td>{{a.detail.totalHours}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>

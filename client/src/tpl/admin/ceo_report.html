@@ -1,0 +1,130 @@
+
+<div class="wrapper-md" ng-controller="controller_mapsCeo">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row row-sm ">
+                <div>
+                <em class="text-muted">Total Store Locations/ Area (m2)</em>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <div class="panel padder-v item" style="padding-bottom: 6px;padding-top: 6px;">
+                        <div class="h1 text-info font-thin "><strong>{{lengLoc}}</strong></div>
+                        <span class="text-muted text-xs">Total</span>
+                        <div class="top text-right w-full">
+                        </div>
+                    </div>
+                </div >
+                <div class="col-xs-3 text-center">
+                    <a href class="block panel padder-v item" style="padding-bottom: 6px;padding-top: 6px;">
+                        <span class="text-info font-thin h1 block"><strong>{{spacious}}</strong></span>
+                        <span class="text-muted text-xs">m2</span>
+                        <span class="bottom text-right w-full">
+                        </span>
+                    </a>
+                </div>
+            </div>
+                <div class="row row-sm">
+                <div>
+                <em class="text-muted">This Month Total Consumption (kWh) / Total Power (MW) / Average, Best & Worst Power (kW)</em>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <a href class="block panel padder-v item" style="padding-bottom: 6px;padding-top: 6px;">
+                        <span class="text-info font-thin h1 block"><strong>120,000</strong></span>
+                        <span class="text-muted text-xs">kWh</span>
+                        <span class="top text-left">
+                        </span>
+                    </a>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <a href class="block panel padder-v  item" style="padding-bottom: 6px;padding-top: 6px;">
+                        <span class="text-info font-thin h1 block"><strong>{{totWidget}}</strong></span>
+                        <span class="text-muted text-xs">MW</span>
+                        <span class="top text-left">
+                        </span>
+                    </a>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <a href class="block panel padder-v  item" style="padding-bottom: 3px;padding-top: 3px;padding-right: 30px">
+                        <span class="text-info font-thin h3 block "><div align="right"  style="height: 15px;"><strong>17</strong></div></span>
+                        <span class="text-info font-thin h1 block"><div align="left" style="height: 25px;"><strong>&nbsp;{{datatot}}</strong>
+                        <span class="text-muted text-xs"><div align="left" style="height: 0px;">&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kW/m2</div></span></div></span>
+                        <span class="text-info font-thin h3 block "><div align="right" ><strong>3,85</strong></div></span>
+                        <span class="top text-left">
+                        </span>
+                    </a>
+                </div>
+                </div>
+
+                <div class="row row-sm " ng-repeat="a in location">
+                    <div>
+                    <em class="text-muted">{{a.ProvName}}, #Store, This Month Total Consumption (kWh) / Total Power (MW) / Average, Best & Worst Power (kW)</em>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <a href class="block panel padder-v  item" style="padding-bottom: 6px;padding-top: 6px;">
+                            <span class="text-info font-thin h1 block"><strong>1</strong></span>
+                            <span class="text-muted text-xs">Store</span>
+                            <span class="top text-left">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 text-center"  style="width: 170px;">
+                        <a href class="block panel padder-v  item" style="padding-bottom: 6px;padding-top: 6px;">
+                            <span class="text-info font-thin h1 block"><strong>1</strong></span>
+                            <span class="text-muted text-xs">kWh</span>
+                            <span class="top text-left">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <a href class="block panel padder-v  item" style="padding-bottom: 6px;padding-top: 6px;">
+                            <span class="text-info font-thin h1 block"><strong>{{a.widget}}</strong></span>
+                            <span class="text-muted text-xs">MW</span>
+                            <span class="top text-left">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <a href class="block panel padder-v  item" style="padding-bottom: 3px;padding-top: 3px;padding-right: 30px">
+                            <span class="text-info font-thin h3 block "><div align="right"  style="height: 15px;"><strong>1,45</strong></div></span>
+                            <span class="text-info font-thin h1 block"><div align="left" style="height: 25px;"><strong>&nbsp;{{a.spaTot}}</strong>
+                            <span class="text-muted text-xs"><div align="left" style="height: 0px;">&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kW/m2</div></span></div></span>
+                            <span class="text-info font-thin h3 block "><div align="right" ><strong>3,85</strong></div></span>
+                            <span class="top text-left">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-xs-1 text-center" style="width: 70px;">
+                        <a href class="block panel padder-v  item">
+                            <span class="text-info font-thin h4 block "><div align="text-center" ><strong>3,8</strong></div></span>
+                            <span class="text-info font-thin h4 block "><div align="text-center" ><strong>3,8</strong></div></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-sm">
+                    <div>
+                    <em class="text-muted">Total Existing Alarms</em>
+                    </div>
+                    <div class="col-xs-2 text-center" >
+                        <div class="panel padder-v item" style="padding-bottom: 6px;padding-top: 6px;">
+                            <div class="text-info font-thin h1"><strong>35</strong></div>
+                            <span class="text-muted text-xs">Critical</span>
+                            <div class="bottom text-left">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <a href class="block panel padder-v  item" style="padding-bottom: 6px;padding-top: 6px;">
+                            <span class="text-info font-thin h1 block"><strong>1234</strong></span>
+                            <span class="text-muted text-xs">Major</span>
+                            <span class="bottom text-right w-full">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+        </div>
+   </div>
+</div>
+</div>

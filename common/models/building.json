@@ -1,0 +1,35 @@
+{
+  "name": "building",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_location": {
+      "type": "number"
+    },
+    "label": {
+      "type": "string"
+    },
+    "position_left": {
+      "type": "string"
+    },
+    "position_top": {
+      "type": "number"
+    },
+    "styles": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "location": {
+      "type": "belongsTo",
+      "model": "location",
+      "foreignKey": "id_location"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

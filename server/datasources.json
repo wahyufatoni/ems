@@ -1,0 +1,39 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysql_connect": {
+    "host": "localhost",
+    "port": 0,
+    "url": "",
+    "database": "EMS",
+    "password": "admin",
+    "name": "mysql_connect",
+    "user": "root",
+    "connector": "mysql"
+  },
+  "myfile": {
+    "name": "myfile",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./client/src/img"
+  },
+  "rest": {
+    "name": "rest",
+    "baseURL": "",
+    "crud": false,
+    "connector": "rest",
+    "operations": [
+      {
+        "functions": {
+          "watt": []
+        },
+        "template": {
+          "method": "GET",
+          "url": "http://localhost:3000/api/Wattprdis"
+        }
+      }
+    ]
+  }
+}

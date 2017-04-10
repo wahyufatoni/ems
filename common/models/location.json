@@ -1,0 +1,86 @@
+{
+  "name": "location",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "location_name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "id_zone": {
+      "type": "number"
+    },
+    "spacious": {
+      "type": "number"
+    },
+    "manager": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "start_operation": {
+      "type": "string"
+    },
+    "end_operation": {
+      "type": "string"
+    },
+    "id_gateway": {
+      "type": "number"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "phone_manager": {
+      "type": "string"
+    },
+    "id_province": {
+      "type": "number"
+    },
+    "id_branch": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "zone": {
+      "type": "belongsTo",
+      "model": "zone",
+      "foreignKey": "id_zone"
+    },
+    "logAdmins": {
+      "type": "hasMany",
+      "model": "log_admin",
+      "foreignKey": "id_location"
+    },
+    "items": {
+      "type": "hasMany",
+      "model": "item",
+      "foreignKey": "id_location"
+    },
+    "province": {
+      "type": "belongsTo",
+      "model": "province",
+      "foreignKey": "id_province"
+    },
+    "buildings": {
+      "type": "hasMany",
+      "model": "building",
+      "foreignKey": "id_location"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,62 @@
+{
+  "name": "pump",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "channel": {
+      "type": "number"
+    },
+    "id_kwh": {
+      "type": "number"
+    },
+    "pump_name": {
+      "type": "string"
+    },
+    "part_number": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "install_date": {
+      "type": "date"
+    },
+    "id_location": {
+      "type": "number"
+    },
+    "max_threshold": {
+      "type": "number"
+    },
+    "io_id": {
+      "type": "number"
+    },
+    "last_io": {
+      "type": "number"
+    },
+    "styles": {
+      "type": "string"
+    },
+    "position_left": {
+      "type": "string"
+    },
+    "position_top": {
+      "type": "number"
+    },
+    "type_io": {
+      "type": "number"
+    },
+    "id_type_alarm": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

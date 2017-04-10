@@ -1,0 +1,170 @@
+<form class="form-horizontal form-validation" name="$parent.formEquipment">
+<div class="modal fade" id="modalEquipment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">FORM Equipment</h4>
+      </div>
+      <div class="modal-body">
+
+          <div class="form-group">
+            <label class="col-sm-5 h4"><b>Set Equipment Info</b></label>
+          </div>
+
+          <div ng-show="$parent.action=='update'||$parent.action=='insert'">
+           <div class="form-group">
+            <label class="col-sm-4" control-label" style="text-align:left;">Province</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.id_province" ng-change="setProvince($parent.post.id_province)"required>
+                    <option ng-repeat="a in $parent.province" value="{{a.id}}">{{a.province_name}}</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4" control-label" style="text-align:left;">Zone</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.id_zone" ng-change="setZone($parent.post.id_zone)" required>
+                    <option ng-repeat="a in $parent.zone" value="{{a.id}}">{{a.zone_name}}</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4" control-label" style="text-align:left;">Branch</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.id_branch" ng-change="setBranch($parent.post.id_branch)"  required>
+                    <option ng-repeat="a in $parent.branch" value="{{a.id}}">{{a.branch_name}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Location</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.id_location" 
+                  ng-change="setLocationEquipment($parent.post.id_location)" required>
+                    <option ng-repeat="a in locations" value="{{a.id}}">{{a.location_name}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Choose Device Type</label>
+            <div class="col-sm-8" ui-module="select2">
+              <select ui-select2 class="form-control" ng-model="$parent.post.type_item" >
+                    <option ng-repeat="a in equip" value={{a.value}}>{{a.value}}</option>
+              </select>
+            </div>
+          </div>         
+
+          <div ng-show="$parent.post.type_item=='AC Split'">
+
+          <div class="form-group">
+            <div class="col-md-5">&nbsp;</div>
+            <div class="radio" style="left: -35px;">
+              <label class="i-checks">
+                <input type="radio" name="ac-left" value="ac-left" ng-model="$parent.post.acSplit">
+                <i></i>
+                AC left
+              </label>
+              <label class="i-checks">
+                <input type="radio" name="ac-left" value="ac-top" ng-model="$parent.post.acSplit">
+                <i></i>
+                AC Top
+              </label>
+              <label class="i-checks">
+                <input type="radio" name="ac-left" value="ac-right" ng-model="$parent.post.acSplit">
+                <i></i>
+                AC Right
+              </label>
+              <label class="i-checks">
+                <input type="radio" name="ac-left" value="ac-bottom" ng-model="$parent.post.acSplit">
+                <i></i>
+                AC bottom
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label class="col-sm-4 control-label" style="text-align:left;">Temperature AC</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="$parent.post.temperature" >
+              </div>
+          </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Device Label</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="$parent.post.label" >
+            </div>
+          </div>
+
+          <div class= "form-group" >
+                <label class="col-sm-4 control-label" style="text-align:left;"> Phasa</label>
+                <div class="col-md-8" ui-module="select2">
+                    <select ui-select2 class="form-control" ng-model="$parent.post.phasa">
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                        <option value="S">T</option>
+                    </select>
+                </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Channel</label>
+            <div class="col-sm-8" ui-module="select2">
+                <select ui-select2 class="form-control" ng-model="$parent.post.channel" >
+                    <option ng-repeat="c in channel" value="{{c.Channel}}">{{c.Channel}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Brand</label>
+            <div class="col-sm-8" ui-module="select2">
+              <select ui-select2 class="form-control" ng-model="$parent.post.brand" ng-chane="setBrand($parent.post.brand)">
+                    <option ng-repeat="a in equipment" value={{a.brand}}>{{a.brand}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Max Current</label>
+            <div class="col-sm-8" >
+                <input type="text" class="form-control" ng-model="$parent.post.max_operating_current" disabled>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Supplier Name</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="$parent.post.supplier" >
+            </div>
+          </div>
+
+           <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Serial #</label>
+            <div class="col-sm-8" ui-module="select2">
+              <select ui-select2 class="form-control" ng-model="$parent.post.equipment_part_number" >
+                    <option ng-repeat="a in equipment" value={{a.equipment_part_number}}>{{a.equipment_part_number}}</option>
+              </select>
+            </div>
+          </div>
+
+          </div>
+          <div ng-show="$parent.action=='delete'">
+              <h4>Are you sure to delete {{post.zone}} ?</h4>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-primary" data-dismiss="modal" 
+          ng-click="save()" ng-disabled="$parent.formEquipment.$invalid">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>

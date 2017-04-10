@@ -1,0 +1,35 @@
+{
+  "name": "kwh",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "kwh_name": {
+      "type": "string"
+    },
+    "id_location": {
+      "type": "number"
+    },
+    "kwh_id": {
+      "type": "number"
+    },
+    "part_number": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "install_date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

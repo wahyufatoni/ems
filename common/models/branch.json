@@ -1,0 +1,40 @@
+{
+  "name": "branch",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_zone": {
+      "type": "number"
+    },
+    "branch_name": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "id_employee": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "locations": {
+      "type": "hasMany",
+      "model": "location",
+      "foreignKey": "id_branch"
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "zone",
+      "foreignKey": "id_zone"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

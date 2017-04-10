@@ -1,0 +1,196 @@
+ <div ng-controller="CtrlSetups">
+ <div class="col">        
+                <!-- main header -->
+                <div class="bg-light lter b-b wrapper-md">
+                  <div class="row">
+                    <div class="col-sm-7 col-xs-12">
+                      <div class="row">
+                        <h1 class="m-n font-thin h3 text-black">
+                        <div class="col-md-8 "><i class="fa fa-building">
+                        Admin System Setting</i></div>
+                        </h1>
+                      </div>
+                      
+                    </div>
+                  </div>
+                <!-- / main header -->
+                <div class="row" style="padding:10px 0px 0px 20px;">
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-default btn-sm" ng-click="insert('equipment')" data-toggle="modal" data-target="#modalEquipment">Add Equipment</button>
+                      <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalDevice" ng-click="insert('device')">Add Sensor</button>
+                      <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalCustomer" ng-click="insert('customer')">Add Customer</button>
+                    </div>
+                </div>
+                </div>
+                  <!-- stats -->
+
+                <div class="wrapper-md">
+                <!-- service -->
+                  <div class="col wrapper">
+                    <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li role="presentation" class="active">
+                          <a href="#equipment" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>&nbsp;Equipment</a>
+                      </li>
+                      <li role="presentation">
+                          <a href="#device" aria-controls="device" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>&nbsp;Sensor
+                          </a>
+                      </li>
+                      <li role="presentation">
+                          <a href="#customer" aria-controls="customer" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>&nbsp;Customer
+                          </a>
+                      </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                <div class="panel hbox hbox-auto-xs no-border">
+                    <div class="tab-content">
+                      <!-- start tab equipment -->
+                      <div role="tabpanel" class="tab-pane active" id="equipment">
+                            <div ng-show="equipment.length==0">
+                                <blockquote><h3 style="font-family:times new roman;"><i class="icon icon-info"></i>&nbsp;Equipment is empty</h3></blockquote>
+                            </div>
+                            <table ng-if="equipment" ui-jq="dataTable" ui-options="options" class="table table-bordered table-hover m-b-none">
+                              <thead>
+                                <tr>
+                                  <th>Equipment Type</th>
+                                  <th>Brand</th>
+                                  <th>Equipment Part Number</th>
+                                  <th>Maximum Operating Current</th>
+                                  <th>Cooling Cap</th>
+                                  <!-- <th>MIB</th> -->
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr ng-repeat="a in equipment">
+                                  <td>{{a.equipment_type}}</td>
+                                  <td>{{a.brand}}</td>
+                                  <td>{{a.equipment_part_number}}</td>
+                                  <td>{{a.max_operating_current}}</td>
+                                  <td>{{a.cooling_cap}}</td>
+                                  <!-- <td>{{a.mib}}</td> -->
+                                  <td>
+                                      <button class="btn btn-default btn-xs" ng-click="update('equipment',a)"
+                                        data-toggle="modal" data-target="#modalEquipment">
+                                          <i class="fa fa-pencil"></i>
+                                      </button>
+                                      <button class="btn btn-default btn-xs" ng-click="delete('equipment',a)"
+                                        data-toggle="modal" data-target="#modalEquipment">
+                                          <i class="fa fa-trash-o"></i>
+                                      </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                      </div>
+                      <!-- end equipment tab -->
+
+                      <!-- start tab device -->
+                      <div role="tabpanel" class="tab-pane" id="device">
+                          <div ng-show="device.length==0">
+                              <blockquote><h3 style="font-family:times new roman;"><i class="icon icon-info"></i>&nbsp;Sensor is empty</h3></blockquote>
+                          </div>
+                          <table ng-if="device" ui-jq="dataTable" ui-options="options" class="table table-bordered table-hover m-b-none">
+                              <thead>
+                                <tr>
+                                  <th>Equipment Type</th>
+                                  <th>Brand</th>
+                                  <th>Equipment Part Number</th>
+                                  <!-- <th>MIB</th> -->
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr ng-repeat="a in device">
+                                  <td>{{a.equipment_type}}</td>
+                                  <td>{{a.brand}}</td>
+                                  <td>{{a.equipment_part_number}}</td>
+                                  <!-- <td>{{a.mib}}</td> -->
+                                  <td>
+                                      <button class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalDevice" ng-click="update('device',a)">
+                                          <i class="fa fa-pencil"></i>
+                                      </button>
+                                      <button class="btn btn-default btn-xs" data-toggle="modal"
+                                       data-target="#modalDevice" ng-click="delete('device',a)">
+                                          <i class="fa fa-trash-o"></i>
+                                      </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                      </div>
+                      <!-- end device tab -->
+
+                      <!-- start tab customer -->
+                      <div role="tabpanel" class="tab-pane" id="customer">
+                          <div ng-show="customer.length==0">
+                              <blockquote><h3 style="font-family:times new roman;"><i class="icon icon-info"></i>&nbsp;Customer is empty</h3></blockquote>
+                          </div>
+                          <div class="wrapper-sm b-b b-light">
+                            Search:
+                            <input id="filter" type="text" class="form-control input-sm w-sm inline m-r" />
+                        </div>
+                          <table ng-if="customer" ui-jq="footable" data-filter="#filter" data-page-size="5" ui-options="options" class="table table-bordered table-hover m-b-none" ui-scroll>
+                              <thead>
+                                <tr>
+                                  <th>Customer ID</th>
+                                  <th>Customer Name</th>
+                                  <th>Customer Type</th>
+                                  <th>Billing Type</th>
+                                  <th>Customer PIC</th>
+                                  <th>Phone</th>
+                                  <th>Username</th>
+                                  <th>Email</th>
+                                  <th>Join Date</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr ng-repeat="a in customer">
+                                  <td>{{a.customer_id}}</td>
+                                  <td>{{a.customer_name}}</td>
+                                  <td>{{a.customer_type}}</td>
+                                  <td>{{a.billing_type}}</td>
+                                  <td>{{a.customer_pic}}</td>
+                                  <td>{{a.phone}}</td>
+                                  <td>{{a.username}}</td>
+                                  <td>{{a.email}}</td>
+                                  <td>{{a.join_date}}</td>
+                                  <td>
+                                      <button class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalCustomer" ng-click="update('customer',a)">
+                                          <i class="fa fa-pencil"></i>
+                                      </button>
+                                      <button class="btn btn-default btn-xs" data-toggle="modal"
+                                       data-target="#modalCustomer" ng-click="delete('customer',a)">
+                                          <i class="fa fa-trash-o"></i>
+                                      </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                              <tfoot class="hide-if-no-paging">
+                                  <tr>
+                                      <td colspan="5" class="text-center">
+                                          <ul class="pagination"></ul>
+                                      </td>
+                                  </tr>
+                              </tfoot>
+                            </table>
+                      </div>
+                      <!-- end customer tab -->
+                      <!-- End tab content -->
+                    </div>
+
+                  </div>
+                  </div>
+                </div>
+  </div>
+</div>
+
+<!-- Modal -->
+
+<div ng-include="'tpl/superadmin/setup-modal/equipment.html'"></div>
+<div ng-include="'tpl/superadmin/setup-modal/sensor.html'"></div>
+<div ng-include="'tpl/superadmin/setup-modal/customer.html'"></div>
+</div>

@@ -1,0 +1,54 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false;
+    app.settings.asideDock = false;  ">
+    <div class="col">
+        <!-- main header -->
+        <div class="bg-light lter b-b wrapper-md">
+            <div class="row">
+                <div class="col-sm-7 col-xs-12">
+
+                    <div class="row" style="left:0;margin:-15px 0px -15px -15px;">
+                        <div class="btn-group" role="group">
+                            <a type="button" class="btn btn-default btn-sm" ui-sref="admin.monitoring">Dashboard</a>
+                            <a type="button" class="btn btn-default btn-sm active" ui-sref="admin.storeInfo">Store Inventory</a>
+                            <a type="button" class="btn btn-default btn-sm " ui-sref="admin.alarm">Alarm</a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="wrapper-md">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table ng-if="items" ui-jq="dataTable" ui-options="options" class="table table-bordered table-hover m-b-none">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>PN</th>
+                                <th>SN</th>
+                                <th>Install Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="a in items">
+                                <td>{{a.label}}</td>
+                                <td>{{a.brand}}</td>
+                                <td>{{a.part_number}}</td>
+                                <td>{{a.serial_number}}</td>
+                                <td>{{a.install_date| date: "dd-MMM-yyyy"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

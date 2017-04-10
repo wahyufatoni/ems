@@ -1,0 +1,44 @@
+{
+  "name": "th",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Th_id": {
+      "type": "number"
+    },
+    "type": {
+      "type": "number"
+    },
+    "Gateway_id": {
+      "type": "number"
+    },
+    "temp1": {
+      "type": "number"
+    },
+    "temp2": {
+      "type": "number"
+    },
+    "temp3": {
+      "type": "number"
+    },
+    "humidity": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "item": {
+      "type": "belongsTo",
+      "model": "item",
+      "foreignKey": "Th_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

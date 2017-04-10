@@ -1,0 +1,31 @@
+<!-- settings -->
+<button class="btn btn-default no-shadow pos-abt" ui-toggle-class="active" target=".alarms">
+    <i class="icon-bell fa-fw"></i>
+    <span class="visible-xs-inline">Notifications</span>
+    <span class="badge badge-sm up bg-danger pull-right-xs" ng-controller="controller_alarm">{{notif}}</span>
+</button>
+<div ng-controller="controller_alarm">
+    <div class="panel-heading">
+        You have {{notif}} Alarms
+    </div>
+    <div class="panel-body">
+        <div class="container">
+            <div class="row">
+                <div class="tab-panes active">
+                    <div class="m-b-sm" ng-repeat="a in alarms | orderBy:'-'" ng-if="a.end_date == null" style="height: 40px;">
+                        {{a.notif.data}}<br>
+                        <small class="text-muted">{{a.notif.start_date | date: "dd-MMM-yyyy"}}</small>
+                        <hr style="margin-top: 0px;margin-bottom: 0px;">
+                    </div>
+                    <div class="panel-footer ">
+                        <button class="btn btn-default" ui-sref="admin.alarm">
+                            <a href class="pull-right">&nbsp;<i class="icon-bell fa-fw"></i></a>
+                            <a data-toggle="class:show animated fadeInRight">See all the Alarms</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /settings -->

@@ -1,0 +1,56 @@
+{
+  "name": "temperature",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "temp_name": {
+      "type": "string"
+    },
+    "th_id": {
+      "type": "number"
+    },
+    "id_location": {
+      "type": "number"
+    },
+    "humidity": {
+      "type": "number"
+    },
+    "last_value": {
+      "type": "number"
+    },
+    "last_humidity": {
+      "type": "number"
+    },
+    "threshold": {
+      "type": "number"
+    },
+    "position_left": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "install_date": {
+      "type": "date"
+    },
+    "last_update": {
+      "type": "string"
+    },
+    "part_number": {
+      "type": "string"
+    },
+    "position_top": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

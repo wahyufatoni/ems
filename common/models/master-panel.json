@@ -1,0 +1,72 @@
+{
+  "name": "master_panel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_zone": {
+      "type": "number"
+    },
+    "id_employee": {
+      "type": "number"
+    },
+    "label": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "id_gateway": {
+      "type": "number"
+    },
+    "manager": {
+      "type": "string"
+    },
+    "phone_manager": {
+      "type": "string"
+    },
+    "start_operation": {
+      "type": "string"
+    },
+    "end_operation": {
+      "type": "string"
+    },
+    "panel_id": {
+      "type": "string"
+    },
+    "panel_brand": {
+      "type": "string"
+    },
+    "gardu_pln_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "panels": {
+      "type": "hasMany",
+      "model": "panel",
+      "foreignKey": "id_master"
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "zone",
+      "foreignKey": "id_zone"
+    },
+    "electronicLocks": {
+      "type": "hasMany",
+      "model": "electronic_lock",
+      "foreignKey": "id_master"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

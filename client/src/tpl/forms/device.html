@@ -1,0 +1,176 @@
+<form class="form-horizontal form-validation" name="$parent.formDevice">
+<div class="modal fade" id="modalDevice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">FORM DEVICE</h4>
+      </div>
+      <div class="modal-body">
+
+          <div class="form-group">
+            <label class="col-sm-5 h4"><b>Set Device Info</b></label>
+          </div>
+
+          <div ng-show="$parent.action=='update'||$parent.action=='insert'">
+          <div class="form-group">
+            <label class="col-sm-4" control-label" style="text-align:left;">Province</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.id_province" ng-change="setProvince($parent.post.id_province)"required>
+                    <option ng-repeat="a in $parent.province" value="{{a.id}}">{{a.province_name}}</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4" control-label" style="text-align:left;">Zone</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.id_zone" ng-change="setZone($parent.post.id_zone)" required>
+                    <option ng-repeat="a in $parent.zone" value="{{a.id}}">{{a.zone_name}}</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4" control-label" style="text-align:left;">Branch</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.id_branch" ng-change="setBranch($parent.post.id_branch)"  required>
+                    <option ng-repeat="a in $parent.branch" value="{{a.id}}">{{a.branch_name}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Location</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.id_location" 
+                  ng-change="setLocation($parent.post.id_location)" required>
+                    <option ng-repeat="a in locations" value="{{a.id}}">{{a.location_name}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Choose Device Type</label>
+            <div class="col-sm-8">
+              <select class="form-control" ng-model="$parent.post.type_item" >
+                    <option ng-repeat="a in device" value={{a.equipment_type}}>{{a.equipment_type}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Device Label</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="$parent.post.label" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Product ID</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.th_id" >
+                    <option ng-repeat="c in productID" value="{{c.Th_id}}">{{c.Th_id}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Brand</label>
+            <div class="col-sm-8">
+              <select class="form-control" ng-model="$parent.post.brand" >
+                    <option ng-repeat="a in device" value={{a.brand}}>{{a.brand}}</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Suplier</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="$parent.post.suplier" >
+            </div>
+          </div>
+
+           <div class="form-group">
+            <label class="col-sm-4 control-label" style="text-align:left;">Serial #</label>
+            <div class="col-sm-8">
+              <select class="form-control" ng-model="$parent.post.equipment_part_number" >
+                    <option ng-repeat="a in device" value={{a.equipment_part_number}}>{{a.equipment_part_number}}</option>
+              </select>
+            </div>
+          </div>
+
+          
+
+         
+
+          <div class="form-group ">
+            <label class="col-sm-5 h4">Set Device Threshold</label>
+          </div>
+
+          <div class="form-group">
+              <label class="col-sm-4 control-label" style="text-align:left;">Treshold</label>
+              <div class="col-sm-8">
+                <select class="form-control" ng-model="$parent.post.aa" >
+                      <option ng-repeat="b in treshold" value={{b.id}}>{{b.name}}</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" style="text-align:left;">Upper Temp Threshold_1</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="$parent.post.aa" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" style="text-align:left;">Lower Temp Threshold_1</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="$parent.post.aa" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" style="text-align:left;">Upper Temp Threshold_2</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="$parent.post.aa" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" style="text-align:left;">Lower Temp Threshold_2</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="$parent.post.aa" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" style="text-align:left;">Upper Hum Threshold</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="$parent.post.aa" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" style="text-align:left;">Lower Hum Threshold</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="$parent.post.aa" >
+              </div>
+            </div>
+
+          </div>
+
+          <div ng-show="$parent.action=='delete'">
+              <h4>Are you sure to delete TH ID : {{$parent.post.th_id}} ?</h4>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-primary" data-dismiss="modal" 
+          ng-click="save()" ng-disabled="$parent.formDevice.$invalid">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>

@@ -1,0 +1,211 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "employee": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "th": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "province": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "zone": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "location": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "WattPrd_I": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "alarm": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "container": {
+    "dataSource": "myfile",
+    "public": true
+  },
+  "widget": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "total": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "panel": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "master_panel": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "branch": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "building": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "WattHour": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ac": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "chiller": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "door": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "infrared": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "io": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "lamp": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "temperature": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "pump": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "kwh": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "brand": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "total_month": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "type_alarm": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "app": {
+    "dataSource": "rest",
+    "public": true
+  },
+  "total_date": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "last_wh": {
+    "dataSource": "mysql_connect",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  }
+}

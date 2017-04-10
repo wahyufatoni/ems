@@ -1,0 +1,32 @@
+{
+  "name": "io",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Gateway_id": {
+      "type": "number"
+    },
+    "Channel": {
+      "type": "number"
+    },
+    "io_id": {
+      "type": "number"
+    },
+    "type": {
+      "type": "number"
+    },
+    "value": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,151 @@
+ <div data-ng-include=" 'tpl/blocks/header_ceo.html' " class="app-header navbar">
+  </div>
+
+<!-- hbox layout -->
+<div class="hbox hbox-auto-xs bg-light " ng-init="
+  app.settings.asideFolded = true;
+  app.settings.asideDock = false;
+  app.settings.container = false;
+  app.hideAside = true"
+  >
+  <!-- column -->
+  <div class="col item">
+    <div class="h-full" style=" min-height:240px;">
+    <!-- column -->
+      <div ng-if="showCeo==true">
+        <div id=map style=" height: 50vw" ui-map="myMap"
+                ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"
+                ui-options="mapOptions">
+        </div>
+      </div>
+
+      <div ng-if="showCeo==false">
+        <div data-ng-include=" 'tpl/admin/ceo_report.html' "></div>
+      </div>
+
+      <!-- /column -->
+    </div>
+  </div>
+
+  <!-- /column -->
+
+  <!-- column -->
+  <div class="col w-md lter b-l" style="width: 550px;">
+    <div class="vbox">
+      <!-- <div class="row"> -->
+
+        <div class="wrapper b-b b-light">
+           <form style="margin-bottom:-20px;" class="form-validation" name="myForm">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" ng-model="search"
+                 class="form-control no-border rounded padder" placeholder="Keypress enter to search data ..." >
+                <span class="input-group-btn">
+                  <button type="submit" class="btn bg-info rounded" ng-click="getSearch(search)"
+                  ng-disabled="myForm.$invalid">
+                      <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </form>
+      </div>
+
+      <!-- </div> -->
+
+
+      <div class="wrapper b-b b-light">
+        <div class="form-group pull-in clearfix">
+
+        <div ng-if="user.role=='admin'||user.role=='superadmin'" >
+            <div class="col-sm-4" ui-module="select2">
+              <label>Province</label>
+              <select ui-select2 ng-model="id_city" ng-change="setProvince(id_city)" class="form-control" required>
+                  <option ng-repeat="a in provinces" value={{a.id}}>{{a.province_name}}</option>
+              </select>
+            </div>
+            <div class="col-sm-4" ui-module="select2">
+              <label>Zone</label>
+              <select ui-select2 ng-model="id_zone" ng-change="setZone(id_zone)" class="form-control" required>
+                  <option ng-repeat="a in zones" value={{a.id}}>{{a.zone_name}}</option>
+              </select>
+            </div>
+             <div class="col-sm-4" ui-module="select2">
+              <label>Branch</label>
+              <select ui-select2 ng-model="id_branch" ng-change="setBranch(id_branch)" class="form-control" required>
+                  <option ng-repeat="a in branches" value={{a.id}}>{{a.branch_name}}</option>
+              </select>
+            </div>
+               <div class="col-sm-12" ui-module="select2">
+              <label>Location</label>
+              <select ui-select2 ng-model="id_location" ng-change="setLocation(id_location)" class="form-control" required>
+                  <option ng-repeat="a in locations" value={{a.id}}>{{a.location_name}}</option>
+              </select>
+            </div>
+        </div>
+
+        <div ng-if="user.role=='zone'">
+            <div class="col-sm-6" ui-module="select2">
+                <label>Branch</label>
+                <select ui-select2 ng-model="id_branch" ng-change="setBranch(id_branch)" class="form-control" required>
+                    <option ng-repeat="a in branches" value={{a.id}}>{{a.branch_name}}</option>
+                </select>
+            </div>
+            <div class="col-sm-6" ui-module="select2">
+                <label>Location</label>
+                <select ui-select2 ng-model="id_location" ng-change="setLocation(id_location)" class="form-control" required>
+                    <option ng-repeat="a in locations" value={{a.id}}>{{a.location_name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div ng-if="user.role=='branch'">
+            <div class="col-sm-12" ui-module="select2">
+                <label>Location</label>
+                <select ui-select2 ng-model="id_location" ng-change="setLocation(id_location)" class="form-control" required>
+                    <option ng-repeat="a in locations" value={{a.id}}>{{a.location_name}}</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+      </div>
+
+    <div class="row-row" align="center">
+        <div class="cell" align="center">
+          <div class="cell-inner" >
+            <div class="wrapper-md">
+           <div class="row">
+
+              <a ng-show="show==true ">
+              <div  ng-repeat="a in store" class="col-md-4 col-lg-4 col-sm-3"  style="height: 150px; width: 168px;" >
+                <div class="panel b-a" ng-click="setBuilding(a.id)">
+                  <div class="panel-heading no-border bg-info">
+                   <a ui-sref="admin.dashboard">
+                    <span class="text-lt" style="font-size: 13px;">{{a.location_name}}</span>
+                  </a>
+                  </div>
+                  <div class="item m-l-n-xxs m-r-n-xxs">
+                    <div ng-init="x = 3" class="top text-right padder m-t-xs w-full">
+                    </div>
+                    <div class="bottom wrapper bg-gd-dk text-white" style="width: 100% ;background-color:rgba(0, 0, 0, 0.1);">
+                      <div>{{a.address}}</div>
+                      <div style="font-size: 13px;">{{a.start_operation}} - {{a.end_operation}}</div>
+                    </div>
+                    <img ng-src="{{a.image}}"  class="img-full" style="height: 150px; width: 137px;">
+                  </div>
+                </div>
+              </div>
+              </a>
+              </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- /column -->
+</div>
+<!-- /hbox layout -->
